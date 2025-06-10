@@ -1,0 +1,358 @@
+{
+	"info": {
+		"_postman_id": "70e6d090-4a9a-4cc8-a2bd-5e552ba73d47",
+		"name": "Booking App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37374722"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Krishna Mishra\",\n  \"email\": \"kish@example.com\",\n  \"password\": \"testpassword123\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"test@gmail.com\",\n    \"password\": \"testpassword123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Profile",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODQxZThhOTc3OTliNjEwMDJmNDc0N2YiLCJpYXQiOjE3NDkxNTIwNTksImV4cCI6MTc0OTE1Mjk1OX0.9jeepvxRd924slujJjSTD53TSKw3WqWTXGT8yx8Bmqw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/user/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Profile",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODQxZThhOTc3OTliNjEwMDJmNDc0N2YiLCJpYXQiOjE3NDkxNTIwNTksImV4cCI6MTc0OTE1Mjk1OX0.9jeepvxRd924slujJjSTD53TSKw3WqWTXGT8yx8Bmqw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Apeksha\",\n  \"email\": \"test@gmail.com\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Seed Bookings",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/seed/bookings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"seed",
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bookings Status",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODQxZThhOTc3OTliNjEwMDJmNDc0N2YiLCJpYXQiOjE3NDkxNTIwNTksImV4cCI6MTc0OTE1Mjk1OX0.9jeepvxRd924slujJjSTD53TSKw3WqWTXGT8yx8Bmqw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/bookings?status=upcoming",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"bookings"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "upcoming"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Traveller",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODQyMDI3MTM3MmJhNzk3ZmZlODQ0MDUiLCJpYXQiOjE3NDkxNTY0NzUsImV4cCI6MTc0OTE1NzM3NX0.wc9fHLOm307H6GIGO1F9NR8tZr8i4wJ1h6BrfLSks-k",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"name\": \"Krishna Mishra\",\n        \"age\": \"25\",\n        \"gender\": \"Female\",\n        \"passportNumber\": \"ABCD12345\"\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/travellers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"travellers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Travellers",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODQxZThhOTc3OTliNjEwMDJmNDc0N2YiLCJpYXQiOjE3NDkxNTQ5MjIsImV4cCI6MTc0OTE1NTgyMn0.N7kUqkEuasO4Au9dFzaVtSANAeRh5KPd0Gw_tEK4uUs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/travellers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"travellers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Traveller",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODQxZThhOTc3OTliNjEwMDJmNDc0N2YiLCJpYXQiOjE3NDkxNTcwMDQsImV4cCI6MTc0OTE1NzkwNH0.N3GZ9D898T-VlBtBNtDj7hU8WPd1Yd07DI64SUN7zKU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"68420271372ba797ffe84405\",\n    \"name\": \"Apeksha Pathak\",\n    \"age\": 25,\n    \"gender\": \"Female\",\n    \"passportNumber\": \"ABCD12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/travellers/6841f73533443cfe24715440",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"travellers",
+						"6841f73533443cfe24715440"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Traveller",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODQxZThhOTc3OTliNjEwMDJmNDc0N2YiLCJpYXQiOjE3NDkxNTcwMDQsImV4cCI6MTc0OTE1NzkwNH0.N3GZ9D898T-VlBtBNtDj7hU8WPd1Yd07DI64SUN7zKU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"68420271372ba797ffe84405\",\n    \"name\": \"Apeksha Pathak\",\n    \"age\": 25,\n    \"gender\": \"Female\",\n    \"passportNumber\": \"ABCD12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/travellers/6841f73533443cfe24715440",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"travellers",
+						"6841f73533443cfe24715440"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Summary",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODQxZThhOTc3OTliNjEwMDJmNDc0N2YiLCJpYXQiOjE3NDkxNTc0ODYsImV4cCI6MTc0OTE1ODM4Nn0.VJ1LXj171smJj3M8FPUk1LWtCx981c_rASnC4NkCQ_w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/bookings/6841f44d33443cfe24715437/summary",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"bookings",
+						"6841f44d33443cfe24715437",
+						"summary"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
